@@ -6,7 +6,7 @@ from functional_tests.base import BaseFunctionalTest
 
 class TestFunctionalVisitor(BaseFunctionalTest):
 
-    def test_visitor_sees_scale_scores(self):
+    def test_visitor_sees_profile(self):
         # Kara goes to visit the homepage.
         self.browser.get(self.live_server_url)
 
