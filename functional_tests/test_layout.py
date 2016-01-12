@@ -22,4 +22,4 @@ class TestLayout(BaseFunctionalTest):
             512,
             delta=5
         )
-        self.assertLess(first_div.size['width'], 950)
+        self.assertLess(first_div.size['width'], 975)
