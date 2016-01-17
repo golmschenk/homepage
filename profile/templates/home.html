@@ -8,5 +8,11 @@
         <div class="col-md-4">
             <h2>Education</h2>
         </div>
+        <div id='essay_div' class="col-md-4">
+            <h2>Essays</h2>
+            {% for essay in essays %}
+                <a href="{% url 'essay' essay.url_title %}">{{ essay.title }}</a>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

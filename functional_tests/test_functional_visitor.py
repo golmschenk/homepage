@@ -4,9 +4,13 @@ Functional tests for checking a basic visitor can visit the site.
 from functional_tests.base import BaseFunctionalTest
 
 
+
 class TestFunctionalVisitor(BaseFunctionalTest):
 
     def test_visitor_sees_profile(self):
+        # -- Setup some essays in the database.
+        #essay1 = Essay.objects.create(title='An Awesome Essay')
+
         # Kara goes to visit the homepage.
         self.browser.get(self.live_server_url)
 
