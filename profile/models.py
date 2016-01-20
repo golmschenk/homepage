@@ -7,3 +7,6 @@ class Essay(models.Model):
     """
     title = models.TextField(default='')
 
+    @property
+    def url_title(self):
+        return self.title.lower().replace(' ', '-')
