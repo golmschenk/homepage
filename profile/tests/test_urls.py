@@ -5,8 +5,9 @@ from django.test import TestCase
 
 
 class TestUrlNames(TestCase):
-    @patch('profile.urls.Home')
+    @patch('profile.views.Home')
     def test_home_url_routes_to_home_view(self, mock_home_view):
         url = reverse('home')
+        match = resolve(url)
 
-        assert url == '/'
+        assert match.func == mock_home_view.as_view()
