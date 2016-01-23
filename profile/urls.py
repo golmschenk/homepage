@@ -3,10 +3,9 @@ The URL routing for the profile app.
 """
 from django.conf.urls import url
 
-from profile.views import Home
-
+from profile.views import Home, Essay
 
 urlpatterns = [
     url(r'^$', Home.as_view(), name='home'),
-    url(r'^essay/(?P<url_title>[\w-]+)$', Home.as_view(), name='essay'),
+    url(r'^essay/(?P<url_title>[\w-]+)$', Essay.as_view(), name='essay'),
 ]

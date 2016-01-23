@@ -20,3 +20,6 @@ class TestHomeView(TestCase):
         context = home_view.get_context_data()
 
         assert context['essays'] == 'essay list'
+
+
+

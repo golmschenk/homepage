@@ -10,3 +10,6 @@ class Home(TemplateView):
         context = {}
         context['essays'] = Essay.objects.all()
         return context
+
+class Essay:
+    pass
