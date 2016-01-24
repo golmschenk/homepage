@@ -30,7 +30,7 @@ class TestFunctionalVisitor(BaseFunctionalTest):
 
         # She clicks on one.
         essay_div = self.browser.find_element_by_id('essay_div')
-        essay_div.find_elements_by_tag_name('button')[0].click()
+        essay_div.find_elements_by_tag_name('a')[0].click()
 
         # The essay comes up ready to read.
         self.assertEqual(self.browser.title, "Name of the essay")

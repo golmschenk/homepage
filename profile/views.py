@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 
-from profile.models import Essay
+from profile.models import Essay as EssayModel
 
 
 class Home(TemplateView):
@@ -8,8 +8,10 @@ class Home(TemplateView):
 
     def get_context_data(self):
         context = {}
-        context['essays'] = Essay.objects.all()
+        context['essays'] = EssayModel.objects.all()
         return context
 
-class Essay:
-    pass
+
+class Essay(TemplateView):
+    template_name = 'essay.html'
+
