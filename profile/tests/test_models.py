@@ -1,3 +1,6 @@
+"""
+Tests for the models.
+"""
 from django.test import TestCase
 
 from profile.models import Essay

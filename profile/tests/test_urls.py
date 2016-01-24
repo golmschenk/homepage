@@ -1,3 +1,6 @@
+"""
+Tests for the URL routing.
+"""
 from unittest import skip
 from unittest.mock import patch
 

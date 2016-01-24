@@ -1,3 +1,6 @@
+"""
+The models for the app.
+"""
 from django.db import models
 from django.utils.text import slugify
 
@@ -10,5 +13,8 @@ class Essay(models.Model):
     slug = models.SlugField(default='')
 
     def save(self, *args, **kwargs):
+        """
+        Saving capabilities for the essay model.
+        """
         self.slug = slugify(self.title)
         return super().save(*args, **kwargs)

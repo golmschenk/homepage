@@ -1,3 +1,4 @@
-from django.contrib import admin
-
+"""
+The homepage project admin registration.
+"""
 # Register your models here.

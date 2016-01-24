@@ -1,3 +1,6 @@
+"""
+Tests for the views.
+"""
 from unittest.mock import patch, Mock
 
 from django.test import TestCase

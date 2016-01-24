@@ -1,8 +1,6 @@
 """
 Functional tests for checking a basic visitor can visit the site.
 """
-from django.test import override_settings
-
 from functional_tests.base import BaseFunctionalTest
 from profile.models import Essay
 
@@ -11,7 +9,7 @@ class TestFunctionalVisitor(BaseFunctionalTest):
 
     def test_visitor_sees_profile(self):
         # -- Setup some essays in the database.
-        essay1 = Essay.objects.create(title='An Awesome Essay')
+        Essay.objects.create(title='An Awesome Essay')
 
         # Kara goes to visit the homepage.
         self.browser.get(self.live_server_url)

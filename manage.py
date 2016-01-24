@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+"""
+The project manage script.
+"""
 import os
 import sys
 
