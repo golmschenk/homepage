@@ -7,5 +7,5 @@ from profile.views import Home, Essay
 
 urlpatterns = [
     url(r'^$', Home.as_view(), name='home'),
-    url(r'^essay/(?P<url_title>[\w-]+)$', Essay.as_view(), name='essay'),
+    url(r'^essay/(?P<slug>[\w-]+)$', Essay.as_view(), name='essay'),
 ]

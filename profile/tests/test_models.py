@@ -14,11 +14,12 @@ class TestEssay(TestCase):
 
         assert saved_essay.title == title
 
-    def test_url_title_is_a_property_that_returns_hyphenized_title(self):
+    def test_slug_is_automatically_save_from_title(self):
         essay = Essay()
         title = 'An Awesome Title'
+
         essay.title = title
+        essay.save()
+        saved_essay = Essay.objects.first()
 
-        url_title = essay.url_title
-
-        assert url_title == 'an-awesome-title'
+        assert saved_essay.slug == 'an-awesome-title'

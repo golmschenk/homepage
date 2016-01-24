@@ -7,7 +7,6 @@ from functional_tests.base import BaseFunctionalTest
 from profile.models import Essay
 
 
-@override_settings(DEBUG=True)
 class TestFunctionalVisitor(BaseFunctionalTest):
 
     def test_visitor_sees_profile(self):
@@ -33,7 +32,7 @@ class TestFunctionalVisitor(BaseFunctionalTest):
         essay_div.find_elements_by_tag_name('a')[0].click()
 
         # The essay comes up ready to read.
-        self.assertEqual(self.browser.title, "Name of the essay")
+        assert "An Awesome Essay" in self.browser.title
 
         # It's too long to read at the moment, so Kara closes out of the page.
         self.browser.close()

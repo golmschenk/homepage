@@ -1,17 +1,17 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
 
-from profile.models import Essay as EssayModel
+from profile import models
 
 
 class Home(TemplateView):
-    template_name = 'home.html'
+    template_name = 'profile/home.html'
 
     def get_context_data(self):
         context = {}
-        context['essays'] = EssayModel.objects.all()
+        context['essays'] = models.Essay.objects.all()
         return context
 
 
-class Essay(TemplateView):
-    template_name = 'essay.html'
+class Essay(DetailView):
+    model = models.Essay
 

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'profile/base.html' %}
 
 {% block content %}
     <div class="container">
@@ -11,7 +11,7 @@
         <div id='essay_div' class="col-md-4">
             <h2>Essays</h2>
             {% for essay in essays %}
-                <a href="{% url 'essay' url_title=essay.url_title %}">{{ essay.title }}</a>
+                <a href="{% url 'essay' slug=essay.slug %}">{{ essay.title }}</a>
             {% endfor %}
         </div>
     </div>

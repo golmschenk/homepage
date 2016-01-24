@@ -16,7 +16,7 @@ class TestUrlRouting(TestCase):
 
     @patch('profile.views.Essay')
     def test_essay_url_name_routes_to_essay_view(self, mock_essay_view):
-        url = reverse('essay', kwargs={'url_title': 'url_title'})
+        url = reverse('essay', kwargs={'slug': 'slug'})
         match = resolve(url)
 
         assert match.func == mock_essay_view.as_view()
