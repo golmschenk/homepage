@@ -2,8 +2,8 @@ language: python
 python:
 - '3.5'
 before_install:
-- openssl aes-256-cbc -K $encrypted_1be76513ce5b_key -iv $encrypted_1be76513ce5b_iv
-  -in source/configuration/secret.py.enc -out source/configuration/secret.py -d
+- openssl aes-256-cbc -K $encrypted_89683cefd82c_key -iv $encrypted_89683cefd82c_iv
+  -in configuration/secret.py.enc -out configuration/travis_secret.py -d
 install: pip install -r requirements.txt
 before_script:
 - export DISPLAY=:99.0
