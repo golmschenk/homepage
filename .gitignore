@@ -1,6 +1,7 @@
 ### Project specific
 bower_components/
 configuration/secret.py
+configuration/travis_secret.py
 
 
 # Created by .ignore support plugin (hsz.mobi)

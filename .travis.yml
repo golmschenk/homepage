@@ -1,0 +1,15 @@
+language: python
+python:
+- '3.5'
+before_install:
+- openssl aes-256-cbc -K $encrypted_1be76513ce5b_key -iv $encrypted_1be76513ce5b_iv
+  -in source/configuration/secret.py.enc -out source/configuration/secret.py -d
+install: pip install -r requirements.txt
+before_script:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
+script: py.test
+notifications:
+  slack:
+    secure: LVqDEo+daeodd80t+xqKTa7zr3St07K7njSsbmoo0t47fW5vF70NdsHTYwpEQpie8FIO2PhDHIwSOrpPCgrcTighcMDD30end1s/QVmDFt7ii7tLit6kjoLnw8pWBCVWFoXgaptR+IH5xbbzO/rp2Hf91kPkOxXXf4hTf4ZG/KQz4Q8QhlRNre1bZgVV5LuKn1YdZB01GiB5TQfxAgQWFbBNUXOyt9T2VhMmGw5omSHhg5C5WBFW2/76kRxk9pe4H1YhKWjHWwMgA5vHuWtQ1MCXZ688GFdJyUSjZk+T7ZEdnSHQCSI/4aByEetU3CEL1fFGvwkoYGffTyr0ELrOXBDz5Y2ZdpnFQsUkV/sojO6UNC4BUCWvu5YpraNchVWjpXHO9hv3DFS1nkwlexCqG2lQQhEC0VJLvj7xyNlrzC03O7fwAFa30n3LF4Dokvg2+hdgLkM6ZOOH1s648DnWKNtvMT62bZPuirIiEv/6oHdRMTc+/HMzcK5LVgn4wYRMtHZk3xJpEeH5uYaIf1Bgo5VK6Axtq+Uag1oC+DZV3UNkIQGqf11kUTIm4fGIJWqtsXy2tcd4yqsH+cDfAJ5sdVhsrN86pTSTeJgOHctVAMTe9YBaRq7wiilW0hd0a67BsRxkU5Uz6EjQm3HuGa/4/YYEfRNCndKtNh7HjeX0jpE=
