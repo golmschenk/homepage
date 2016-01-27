@@ -1,5 +1,6 @@
 ### Project specific
 bower_components/
+configuration/secret.py
 
 
 # Created by .ignore support plugin (hsz.mobi)
