@@ -42,9 +42,9 @@ if (!window.requestAnimationFrame)
                 width: window.innerWidth,
                 height: window.innerHeight,
                 velocity: 0.2,
-                numberOfStars: 5 + 0.00009 * (window.innerWidth * window.innerHeight),
-                distanceBetweenStars: 10 + 0.0001 * (window.innerWidth * window.innerHeight),
-                distanceFromMouse: 10 + 0.00017 * (window.innerWidth * window.innerHeight),
+                numberOfStars: 15 + 0.030 * (window.innerWidth + window.innerHeight),
+                distanceBetweenStars: 10 + 0.044 * (window.innerWidth + window.innerHeight),
+                distanceFromMouse: 10 + 0.077 * (window.innerWidth + window.innerHeight),
                 stars: []
             },
             config = $.extend(true, {}, defaults, options);
