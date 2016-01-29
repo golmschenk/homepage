@@ -42,9 +42,9 @@ if (!window.requestAnimationFrame)
                 width: window.innerWidth,
                 height: window.innerHeight,
                 velocity: 0.2,
-                numberOfStars: 80,
-                distanceBetweenStars: 90,
-                distanceFromMouse: 150,
+                numberOfStars: 5 + 0.00009 * (window.innerWidth * window.innerHeight),
+                distanceBetweenStars: 10 + 0.0001 * (window.innerWidth * window.innerHeight),
+                distanceFromMouse: 10 + 0.00017 * (window.innerWidth * window.innerHeight),
                 stars: []
             },
             config = $.extend(true, {}, defaults, options);
@@ -54,8 +54,8 @@ if (!window.requestAnimationFrame)
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
 
-            this.vx = (config.velocity * Math.random());
-            this.vy = (config.velocity * Math.random());
+            this.vx = (config.velocity * (Math.random() - 0.5) * 2.0);
+            this.vy = (config.velocity * (Math.random() - 0.5) * 2.0);
 
             this.radius = Math.random() * config.star.width;
         }

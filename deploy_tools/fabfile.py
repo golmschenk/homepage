@@ -56,4 +56,4 @@ def _update_database(source_folder):
 
 
 def _install_bower_components(source_folder):
-    run('cd %s && mkdir -p bower_components && bower install' % source_folder)
+    run('cd %s && bower install' % source_folder)
