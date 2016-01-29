@@ -1,4 +1,15 @@
+@mixin radial-gradient($inner-color, $outer-color, $position:center) {
+	background: -moz-radial-gradient($position, circle cover, $inner-color 0%, $outer-color 100%);
+	background: -webkit-gradient(radial, $position center, 0px, center center, 100%, color-stop(0%, $inner-color), color-stop(100%, $outer-color));
+	background: -webkit-radial-gradient($position, circle cover, $inner-color 0%, $outer-color 100%);
+	background: -o-radial-gradient($position, circle cover, $inner-color 0%, $outer-color 100%);
+	background: -ms-radial-gradient($position, circle cover, $inner-color 0%, $outer-color 100%);
+	background: radial-gradient($position, circle cover, $inner-color 0%, $outer-color 100%);
+	background-color: $outer-color;
+}
+
 canvas {
+    @include radial-gradient(#3C4558, #121415, bottom);
     position: absolute;
     top: 0;
     left: 0;

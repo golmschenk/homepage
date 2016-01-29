@@ -21,15 +21,19 @@ $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
 
+$light-sky:             #121415;
+$dark-sky:              #3C4558;
+$white:                 #FFFFFF;
+
 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg: #ffffff !default;
+$body-bg: $light-sky !default; // Bootstrap default: #ffffff
 //** Global text color on `<body>`.
-$text-color:            $gray-dark !default;
+$text-color:            $white !default; // Bootstrap default: $gray-dark
 
 //** Global textual link color.
 $link-color:            $brand-primary !default;
