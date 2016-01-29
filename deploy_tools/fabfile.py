@@ -13,6 +13,7 @@ def deploy():
     source_folder = site_folder + '/source'
     _create_directory_structure_if_necessary(site_folder)
     _get_latest_source(source_folder)
+    _install_bower_components(source_folder)
     _update_settings(source_folder, env.host)
     _update_virtualenv(source_folder)
     _update_static_files(source_folder)
@@ -52,3 +53,7 @@ def _update_static_files(source_folder):
 
 def _update_database(source_folder):
     run('cd %s && ../virtualenv/bin/python3 manage.py migrate --noinput' % (source_folder,))
+
+
+def _install_bower_components(source_folder):
+    run('cd %s && mkdir -p bower_components && bower install' % source_folder)
