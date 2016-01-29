@@ -1,0 +1,8 @@
+{
+  "maxErrors": null,
+  "disallowNewlineBeforeBlockStatements": null,
+  "requireNewlineBeforeBlockStatements": true,
+  "disallowKeywordsOnNewLine": null,
+  "requireKeywordsOnNewLine": ["else"],
+  "requireCamelCaseOrUpperCaseIdentifiers": true
+}
