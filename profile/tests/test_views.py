@@ -24,6 +24,15 @@ class TestHomeView(TestCase):
 
         assert context['essays'] == 'essay list'
 
+    @patch('profile.views.models.EducationEntry')
+    def test_get_context_data_adds_education_entries_to_context(self, mock_education_entry_class):
+        mock_education_entry_class.objects.all = Mock(return_value='entry list')
+        home_view = Home()
+
+        context = home_view.get_context_data()
+
+        assert context['education_entries'] == 'entry list'
+
 
 class TestEssayView(TestCase):
     def test_essay_view_is_a_detail_view(self):

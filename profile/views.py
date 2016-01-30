@@ -16,7 +16,10 @@ class Home(TemplateView):
         """
         Generates the context for the view.
         """
-        context = {'essays': models.Essay.objects.all()}
+        context = {
+            'essays': models.Essay.objects.all(),
+            'education_entries': models.EducationEntry.objects.all()
+        }
         return context
 
 

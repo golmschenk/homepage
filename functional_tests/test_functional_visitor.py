@@ -23,7 +23,7 @@ class TestFunctionalVisitor(BaseFunctionalTest):
 
         # There are also links to published essays.
         headers = self.browser.find_elements_by_tag_name('h2')
-        self.assertIn('Essays', [header.text for header in headers])
+        assert any('Essays' in header.text for header in headers)
 
         # She clicks on one.
         essay_div = self.browser.find_element_by_id('essay_div')
