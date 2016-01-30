@@ -28,11 +28,11 @@ if (!window.requestAnimationFrame)
             context = canvas.getContext('2d'),
             defaults = {
                 star: {
-                    color: 'rgba(255, 255, 255, 0.3)',
+                    color: 'rgba(255, 255, 255, 0.5)',
                     width: 2.0
                 },
                 line: {
-                    color: 'rgba(255, 255, 255, 0.3)',
+                    color: 'rgba(255, 255, 255, 0.2)',
                     width: 1.0
                 },
                 position: {
