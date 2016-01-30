@@ -25,3 +25,4 @@ class EducationEntry(models.Model):
     A model to store data about education records.
     """
     text = models.TextField(default='')
+    graduation_date = models.DateField(null=True, blank=True)
