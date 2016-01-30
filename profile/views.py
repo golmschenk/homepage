@@ -3,10 +3,10 @@ Views for the app.
 """
 from django.views.generic import TemplateView, DetailView
 
-from profile import models
+from profile.models import Essay, EducationEntry
 
 
-class Home(TemplateView):
+class HomeView(TemplateView):
     """
     The home view to be displayed for the landing page.
     """
@@ -17,15 +17,15 @@ class Home(TemplateView):
         Generates the context for the view.
         """
         context = {
-            'essays': models.Essay.objects.all(),
-            'education_entries': models.EducationEntry.objects.all()
+            'essays': Essay.objects.all(),
+            'education_entries': EducationEntry.objects.all()
         }
         return context
 
 
-class Essay(DetailView):
+class EssayView(DetailView):
     """
     The view to display essay information.
     """
-    model = models.Essay
+    model = Essay
 
