@@ -10,14 +10,17 @@
         </div>
         <div class="col-md-4">
             <h2>Education</h2>
+            {% for education_entry in education_entries %}
+                <p>{{ education_entry.text }}</p>
+            {% endfor %}
         </div>
         <div id='essay_div' class="col-md-4">
-            <h2>Essays</h2>
+            <h2>Published Essays</h2>
             {% for essay in essays %}
                 <a href="{% url 'essay' slug=essay.slug %}">{{ essay.title }}</a>
             {% endfor %}
         </div>
     </div>
     <script src="{% static "jquery/dist/jquery.js" %}"></script>
-    <script src="{% static "js/constellation.js" %}"></script>
+    <script src="{% static "profile/../../static/js/constellation.js" %}"></script>
 {% endblock %}
