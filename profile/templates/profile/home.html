@@ -11,7 +11,11 @@
         <div class="col-md-4">
             <h2>Education</h2>
             {% for education_entry in education_entries %}
-                <p>{{ education_entry.text }}</p>
+                <p>
+                    {{ education_entry.degree }}: {{ education_entry.graduation_date | default:"Current"}}
+                    <br>
+                    {{ education_entry.additional_information }}
+                </p>
             {% endfor %}
         </div>
         <div id='essay_div' class="col-md-4">

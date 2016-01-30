@@ -31,13 +31,13 @@ class TestEssay(TestCase):
 class TestEducationEntry(TestCase):
     def test_education_entry_can_save_content(self):
         education_entry = EducationEntry()
-        text = "Text content"
+        degree = "Degree content"
 
-        education_entry.text = text
+        education_entry.degree = degree
         education_entry.save()
         saved_education_entry = EducationEntry.objects.first()
 
-        assert saved_education_entry.text == text
+        assert saved_education_entry.degree == degree
 
     def test_graduation_date_can_be_saved_empty(self):
         education_entry = EducationEntry(graduation_date=None)
@@ -45,4 +45,4 @@ class TestEducationEntry(TestCase):
         education_entry.save()
         saved_education_entry = EducationEntry.objects.first()
 
-        assert saved_education_entry.graduation_date == None
+        assert saved_education_entry.graduation_date is None
