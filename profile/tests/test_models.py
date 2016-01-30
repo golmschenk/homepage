@@ -3,7 +3,7 @@ Tests for the models.
 """
 from django.test import TestCase
 
-from profile.models import Essay
+from profile.models import Essay, EducationEntry
 
 
 class TestEssay(TestCase):
@@ -26,3 +26,15 @@ class TestEssay(TestCase):
         saved_essay = Essay.objects.first()
 
         assert saved_essay.slug == 'an-awesome-title'
+
+
+class TestEducationEntry(TestCase):
+    def test_education_entry_can_save_content(self):
+        education_entry = EducationEntry()
+        text = "Text content"
+
+        education_entry.text = text
+        education_entry.save()
+        saved_education_entry = EducationEntry.objects.first()
+
+        assert saved_education_entry.text == text

@@ -21,4 +21,7 @@ class Essay(models.Model):
 
 
 class EducationEntry(models.Model):
-    pass
+    """
+    A model to store data about education records.
+    """
+    text = models.TextField(default='')
