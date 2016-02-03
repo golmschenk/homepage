@@ -11,6 +11,11 @@ class Essay(models.Model):
     """
     title = models.TextField(default='')
     slug = models.SlugField(default='')
+    url_of_original_article = models.URLField(default='')
+    publisher = models.TextField(default='')
+    issue = models.TextField(default='')
+    publication_date = models.DateField(blank=True, null=True)
+    body = models.TextField(default='')
 
     def save(self, *args, **kwargs):
         """

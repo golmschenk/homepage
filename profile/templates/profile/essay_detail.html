@@ -6,6 +6,20 @@
     <div class="container">
         <div class="page-header">
             <h1>{{ essay.title }}</h1>
+            <p>
+                {% if essay.url_of_original_article %}
+                    <a href="{{ essay.url_of_original_article }}">
+                {% endif %}
+                    <i>{{ essay.publisher }}</i>
+                    , {{ essay.issue }}
+                    , {{ essay.publication_date }}
+                {% if essay.url_of_original_article %}
+                    </a>
+                {% endif %}
+            </p>
+        </div>
+        <div>
+            {{ essay.body }}
         </div>
     </div>
 {% endblock %}
