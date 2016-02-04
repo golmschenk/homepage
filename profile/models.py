@@ -35,4 +35,12 @@ class Essay(models.Model):
 
 
 class TeachingEntry(models.Model):
+    """
+    A model for storing information about courses taught.
+    """
     course_number = models.TextField(default='')
+    title = models.TextField(default='')
+    school = models.TextField(default='')
+    position = models.TextField(default='')
+    start_date = models.DateField(blank=True, null=True)
+    end_date = models.DateField(blank=True, null=True)
