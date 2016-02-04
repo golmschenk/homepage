@@ -66,3 +66,10 @@ class TestTeachingEntry(TestCase):
         teaching_entry.end_date = date(2014, 12, 23)
 
         assert teaching_entry.term == 'Fall'
+
+    def test_term_gives_season_name_of_spring_for_the_spring_date_range(self):
+        teaching_entry = TeachingEntry()
+        teaching_entry.start_date = date(2016, 1, 29)
+        teaching_entry.end_date = date(2016, 5, 28)
+
+        assert teaching_entry.term == 'Spring'

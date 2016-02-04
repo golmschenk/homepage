@@ -56,3 +56,5 @@ class TeachingEntry(models.Model):
         """
         if self.start_date < date(self.start_date.year, 10, 1) < self.end_date:
             return "Fall"
+        elif self.start_date < date(self.start_date.year, 3, 1) < self.end_date:
+            return "Spring"
