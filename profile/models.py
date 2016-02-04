@@ -1,6 +1,7 @@
 """
 The models for the app.
 """
+from datetime import date
 from django.db import models
 from django.utils.text import slugify
 
@@ -44,3 +45,14 @@ class TeachingEntry(models.Model):
     position = models.TextField(default='')
     start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
+
+    @property
+    def term(self):
+        """
+        Gets the string of the term name for the date range of the teaching entry.
+
+        :return: The name of the term.
+        :rtype: str
+        """
+        if self.start_date < date(self.start_date.year, 10, 1) < self.end_date:
+            return "Fall"

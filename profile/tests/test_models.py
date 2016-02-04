@@ -1,6 +1,7 @@
 """
 Tests for the models.
 """
+from datetime import date
 from django.test import TestCase
 
 from profile.models import Essay, EducationEntry, TeachingEntry
@@ -58,3 +59,10 @@ class TestTeachingEntry(TestCase):
         saved_teaching_entry = TeachingEntry.objects.first()
 
         assert saved_teaching_entry.course_number == course_number
+
+    def test_term_gives_season_name_of_fall_for_the_fall_date_range(self):
+        teaching_entry = TeachingEntry()
+        teaching_entry.start_date = date(2014, 8, 28)
+        teaching_entry.end_date = date(2014, 12, 23)
+
+        assert teaching_entry.term == 'Fall'
