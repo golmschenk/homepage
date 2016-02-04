@@ -5,6 +5,15 @@ from django.db import models
 from django.utils.text import slugify
 
 
+class EducationEntry(models.Model):
+    """
+    A model to store data about education records.
+    """
+    degree = models.TextField(default='')
+    graduation_date = models.DateField(null=True, blank=True)
+    additional_information = models.TextField(default='')
+
+
 class Essay(models.Model):
     """
     A model for storing data about written articles and essays.
@@ -25,10 +34,5 @@ class Essay(models.Model):
         return super().save(*args, **kwargs)
 
 
-class EducationEntry(models.Model):
-    """
-    A model to store data about education records.
-    """
-    degree = models.TextField(default='')
-    graduation_date = models.DateField(null=True, blank=True)
-    additional_information = models.TextField(default='')
+class TeachingEntry(models.Model):
+    course_number = models.TextField(default='')
