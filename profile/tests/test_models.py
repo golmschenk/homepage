@@ -73,3 +73,17 @@ class TestTeachingEntry(TestCase):
         teaching_entry.end_date = date(2016, 5, 28)
 
         assert teaching_entry.term == 'Spring'
+
+    def test_aggregation_of_the_same_course_over_different_semesters(self):
+        teaching_entry1 = TeachingEntry(course_number="CSC 0000")
+        teaching_entry2 = TeachingEntry(course_number="CSC 1111")
+        teaching_entry3 = TeachingEntry(course_number="CSC 0000")
+        teaching_entry1.save()
+        teaching_entry2.save()
+        teaching_entry3.save()
+
+        aggregated_teaching_entries = TeachingEntry.attain_aggregated()
+
+        assert len(aggregated_teaching_entries) == 2
+        assert aggregated_teaching_entries["CSC 0000"] == [teaching_entry1, teaching_entry3]
+        assert aggregated_teaching_entries["CSC 1111"] == [teaching_entry2]

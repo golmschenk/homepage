@@ -58,3 +58,20 @@ class TeachingEntry(models.Model):
             return "Fall"
         elif self.start_date < date(self.start_date.year, 3, 1) < self.end_date:
             return "Spring"
+
+    @classmethod
+    def attain_aggregated(cls):
+        """
+        Aggregates and returns the courses based on their course_number.
+
+        :return: The dictionary containing courses by course_number.
+        :rtype: dict[str, TeachingEntry]
+        """
+        teaching_entries = cls.objects.all()
+        aggregated_teaching_entries = {}
+        for teaching_entry in teaching_entries:
+            if teaching_entry.course_number in aggregated_teaching_entries:
+                aggregated_teaching_entries[teaching_entry.course_number].append(teaching_entry)
+            else:
+                aggregated_teaching_entries[teaching_entry.course_number] = [teaching_entry]
+        return aggregated_teaching_entries
