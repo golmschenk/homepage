@@ -1,3 +1,4 @@
+beautifulsoup4==4.4.1
 Django==1.9.1
 ecdsa==0.13
 Fabric3==1.10.2.post1
