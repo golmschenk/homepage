@@ -78,4 +78,10 @@ class TeachingEntry(models.Model):
 
 
 class Project(models.Model):
+    """
+    A model for storing information about projects worked on.
+    """
     title = models.TextField(default='')
+    description = models.TextField(default='')
+    url_to_site = models.URLField(default='')
+    url_to_code = models.URLField(default='')
