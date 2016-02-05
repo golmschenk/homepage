@@ -7,6 +7,5 @@ class PrettifyMiddleware(object):
     """
     def process_response(self, request, response):
         if response.has_header('Content-Type') and response['Content-Type'].startswith('text/html'):
-            response.content = BeautifulSoup(response.content).prettify(indent_width=4)
-
+            response.content = BeautifulSoup(response.content, "html.parser").prettify()
         return response
