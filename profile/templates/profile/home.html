@@ -12,7 +12,7 @@
             <h2>Education</h2>
             {% for education_entry in education_entries %}
                 <p>
-                    {{ education_entry.degree }}, {{ education_entry.graduation_date | date:"F Y" | default:"Current"}}
+                    {{ education_entry.degree }}, {{ education_entry.graduation_date|date:"F Y" | default:"Current"}}
                     <br>
                     {{ education_entry.additional_information }}
                 </p>
@@ -22,6 +22,26 @@
             <h2>Published Essays</h2>
             {% for essay in essays %}
                 <a href="{% url 'essay' slug=essay.slug %}">{{ essay.title }}</a>
+            {% endfor %}
+        </div>
+        <div class="col-md-4">
+            <h2>Teaching</h2>
+            {% for aggregate_key, teaching_entries in aggregate_teaching_entries.items %}
+                <p>
+                    {% with teaching_entries|first as representative_teaching_entry %}
+                        {{ representative_teaching_entry.course_number }} - {{ representative_teaching_entry.title }}
+                        <br>
+                        {{ representative_teaching_entry.school }}
+                        <br>
+                    {% endwith %}
+                    {% for teaching_entry in teaching_entries %}
+                        {% if not forloop.last %}
+                            {{ teaching_entry.term }} {{ teaching_entry.start_date|date:"Y" }},
+                        {% else %}
+                            {{ teaching_entry.term }} {{ teaching_entry.start_date|date:"Y" }}
+                        {% endif %}
+                    {% endfor %}
+                </p>
             {% endfor %}
         </div>
     </div>

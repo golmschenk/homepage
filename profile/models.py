@@ -42,7 +42,7 @@ class TeachingEntry(models.Model):
     course_number = models.TextField(default='')
     title = models.TextField(default='')
     school = models.TextField(default='')
-    position = models.TextField(default='')
+    position = models.TextField(blank=True)
     start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
 
