@@ -4,7 +4,7 @@ Tests for the models.
 from datetime import date
 from django.test import TestCase
 
-from profile.models import Essay, EducationEntry, TeachingEntry
+from profile.models import Essay, EducationEntry, Project, TeachingEntry
 
 
 class TestEssay(TestCase):
@@ -87,3 +87,15 @@ class TestTeachingEntry(TestCase):
         assert len(aggregated_teaching_entries) == 2
         assert aggregated_teaching_entries["CSC 0000"] == [teaching_entry1, teaching_entry3]
         assert aggregated_teaching_entries["CSC 1111"] == [teaching_entry2]
+
+
+class TestProject(TestCase):
+    def test_project_can_save_content(self):
+        project = Project()
+        title = "An Awesome Project"
+
+        project.title = title
+        project.save()
+        saved_project = Project.objects.first()
+
+        assert saved_project.title == title

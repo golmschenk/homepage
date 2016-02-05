@@ -75,3 +75,7 @@ class TeachingEntry(models.Model):
             else:
                 aggregated_teaching_entries[teaching_entry.course_number] = [teaching_entry]
         return aggregated_teaching_entries
+
+
+class Project(models.Model):
+    title = models.TextField(default='')
