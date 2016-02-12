@@ -46,6 +46,7 @@
         </div>
         {% for project in projects %}
             <a href="{{ project.url_to_site }}"></a>
+            <a href="{{ project.url_to_code }}"></a>
         {% endfor %}
     </div>
     <script src="{% static "jquery/dist/jquery.js" %}"></script>

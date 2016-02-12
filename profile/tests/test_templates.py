@@ -15,3 +15,11 @@ class TestHomeTemplate(TestCase):
         response = self.client.get(reverse('home'))
 
         assert 'href="%s"' % 'fake_site' in response.content.decode()
+
+    def test_project_code_links_exist(self):
+        project1 = Project.objects.create()
+        project2 = Project.objects.create(url_to_code='fake_code')
+
+        response = self.client.get(reverse('home'))
+
+        assert 'href="%s"' % 'fake_code' in response.content.decode()
