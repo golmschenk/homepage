@@ -3,7 +3,7 @@ Views for the app.
 """
 from django.views.generic import TemplateView, DetailView
 
-from profile.models import Essay, EducationEntry, TeachingEntry
+from profile.models import Essay, EducationEntry, TeachingEntry, Project
 
 
 class HomeView(TemplateView):
@@ -20,6 +20,7 @@ class HomeView(TemplateView):
             'essays': Essay.objects.all(),
             'education_entries': EducationEntry.objects.all(),
             'aggregate_teaching_entries': TeachingEntry.attain_aggregated(),
+            'projects': Project.objects.all(),
         }
         return context
 

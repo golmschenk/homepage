@@ -44,6 +44,9 @@
                 </p>
             {% endfor %}
         </div>
+        {% for project in projects %}
+            <a href="{{ project.url_to_site }}"></a>
+        {% endfor %}
     </div>
     <script src="{% static "jquery/dist/jquery.js" %}"></script>
     <script src="{% static "js/constellation.js" %}"></script>
