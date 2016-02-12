@@ -45,8 +45,16 @@
             {% endfor %}
         </div>
         {% for project in projects %}
-            <a href="{{ project.url_to_site }}"></a>
-            <a href="{{ project.url_to_code }}"></a>
+            <div class="col-md-4">
+                <h2>{{ project.title }}</h2>
+                <p>{{ project.description }}</p>
+                {% if project.url_to_site %}
+                    <a href="{{ project.url_to_site }}" class="btn btn-default">Site</a>
+                {% endif %}
+                {% if project.url_to_site %}
+                    <a href="{{ project.url_to_code }}" class="btn btn-default">Code</a>
+                {% endif %}
+            </div>
         {% endfor %}
     </div>
     <script src="{% static "jquery/dist/jquery.js" %}"></script>
