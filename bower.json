@@ -2,6 +2,6 @@
   "name": "Homepage",
   "version": "0.0.1",
   "dependencies": {
-    "bootstrap-sass": "latest"
+    "bootstrap": "4.0"
   }
 }

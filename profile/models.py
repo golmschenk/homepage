@@ -83,5 +83,5 @@ class Project(models.Model):
     """
     title = models.TextField(default='')
     description = models.TextField(default='')
-    url_to_site = models.URLField(default='')
-    url_to_code = models.URLField(default='')
+    url_to_site = models.URLField(default='', blank=True)
+    url_to_code = models.URLField(default='', blank=True)
