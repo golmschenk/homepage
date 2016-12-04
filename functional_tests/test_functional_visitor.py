@@ -1,6 +1,9 @@
 """
 Functional tests for checking a basic visitor can visit the site.
 """
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+
 from functional_tests.base import BaseFunctionalTest
 from profile.models import Essay
 
@@ -30,7 +33,7 @@ class TestFunctionalVisitor(BaseFunctionalTest):
         essay_div.find_elements_by_tag_name('a')[0].click()
 
         # The essay comes up ready to read.
-        assert "An Awesome Essay" in self.browser.title
+        WebDriverWait(self.browser, 3).until(expected_conditions.title_contains('An Awesome Essay'))
 
         # It's too long to read at the moment, so Kara closes out of the page.
         self.browser.close()
