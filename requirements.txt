@@ -1,5 +1,5 @@
 beautifulsoup4==4.4.1
-Django==1.9.1
+Django==1.10.4
 ecdsa==0.13
 Fabric3==1.10.2.post1
 gunicorn==19.4.5
@@ -9,5 +9,5 @@ py==1.4.31
 pycrypto==2.6.1
 pytest==2.8.5
 pytest-django==2.9.1
-selenium==2.48.0
+selenium==3.0.2
 six==1.10.0
