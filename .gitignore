@@ -112,3 +112,5 @@ docs/_build/
 # PyBuilder
 target/
 
+/climatechange/static/climatechange/css/
+/profile/static/profile/css/
