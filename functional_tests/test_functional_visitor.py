@@ -37,3 +37,15 @@ class TestFunctionalVisitor(BaseFunctionalTest):
 
         # It's too long to read at the moment, so Kara closes out of the page.
         self.browser.close()
+
+    def test_visitor_sees_climate_change_app(self):
+        # Kara goes to visit the homepage.
+        self.browser.get(self.live_server_url + '/climate-change')
+
+        # She sees she's reached the right page.
+        assert "Climate Change" in self.browser.title
+
+        assert False  # Finish the test!
+
+        # Kara leaves for now.
+        self.browser.close()
