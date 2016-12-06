@@ -68,6 +68,9 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+        'DIRS': [
+            '{0}/templates/'.format(BASE_DIR),
+        ],
     },
 ]
 
@@ -106,6 +109,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATICFILES_DIRS = ['configuration/static', 'bower_components']
+STATICFILES_DIRS = ['profile/static/profile', 'climatechange/static/climatechange', 'bower_components']
 STATIC_URL = '/static/'
 STATIC_ROOT = '../static/'
