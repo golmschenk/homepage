@@ -17,8 +17,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 import profile.urls as profile_urls
+import climatechange.urls as climatechange_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include(profile_urls))
+    url(r'^', include(profile_urls)),
+    url(r'^climate-change', include(climatechange_urls)),
 ]
