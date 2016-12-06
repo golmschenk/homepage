@@ -1,0 +1,17 @@
+$sticky_footer_height: 60px;
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.page-container {
+    margin-bottom: $sticky_footer_height;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $sticky_footer_height;
+}

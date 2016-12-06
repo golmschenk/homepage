@@ -8,18 +8,16 @@
     {% block css_link %}{% endblock %}
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-3 page-container">
         {% block content %}
         {% endblock %}
-
-        <footer class="navbar-fixed-bottom">
-            <div class="container">
-                <p class="text-right">
-                    Copyright &copy; Greg Olmschenk {% now "Y" %}. All rights reserved.
-                </p>
-                <br>
-            </div>
-        </footer>
     </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-xs-right">
+                Copyright &copy; Greg Olmschenk {% now "Y" %}. All rights reserved.
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
